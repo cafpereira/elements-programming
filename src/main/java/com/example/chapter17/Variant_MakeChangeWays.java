@@ -5,7 +5,7 @@ import java.util.HashMap;
 class ChangeWays {
 
     public static void main(String[] args) {
-        int[] coins = new int[]{27, 10, 5, 1};
+        int[] coins = new int[]{25, 10, 5, 1};
         System.out.println("makeChangeWays('" + 27 + "') = " + makeChangeWays(coins, 27));
     }
 
