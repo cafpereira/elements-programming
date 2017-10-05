@@ -3,7 +3,7 @@ package com.example.chapter20;
 import java.text.*;
 import java.util.*;
 
-class Solution {
+class TimerSolution {
     public static void main(String[] args) throws Exception {
         Timer timer = new Timer();
         timer.start();
