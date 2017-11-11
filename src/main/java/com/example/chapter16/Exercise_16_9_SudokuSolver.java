@@ -60,12 +60,10 @@ class SudokuSolver {
 
     // Check sub-matrix entries
     int regionSize = (int) Math.sqrt(n);
-    int regionRow = row / regionSize;
-    int regionCol = col / regionSize;
-    for (int rowOffset = 0; rowOffset < regionSize ; rowOffset++) {
-      int i = regionSize * regionRow +  rowOffset;
-      for (int colOffset = 0; colOffset < regionSize; colOffset++) {
-        int j = regionSize * regionCol + colOffset;
+    int regionRow = ((row / regionSize) * regionSize);
+    int regionCol = ((col / regionSize) * regionSize);
+    for (int i = regionRow; i < regionRow + regionSize ; i++) {
+      for (int j = regionCol; j < regionCol + regionSize; j++) {
         if (board[i][j] != EMPTY_ENTRY) {
           int val = board[i][j];
           used[val] = true;
