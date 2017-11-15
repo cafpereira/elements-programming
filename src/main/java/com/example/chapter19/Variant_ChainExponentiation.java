@@ -14,11 +14,11 @@ class ChainExponentiation {
      * solution: BFS
      */
     public static List<Integer> shortestAdditionChain(int n) {
-        Queue<List> queue = new LinkedList<>();
-        queue.add(Arrays.asList(1));
+        Queue<List<Integer>> queueOfChains = new LinkedList<>();
+        queueOfChains.add(Arrays.asList(1));
 
-        while (!queue.isEmpty()) {
-            List<Integer> chain = queue.remove();
+        while (!queueOfChains.isEmpty()) {
+            List<Integer> chain = queueOfChains.remove();
             Integer cur = chain.get(chain.size() - 1);
             for (Integer prev : chain) {
                 List<Integer> path = new ArrayList<>(chain);
@@ -27,7 +27,7 @@ class ChainExponentiation {
                 if (sum == n) {
                     return path;
                 } else {
-                    queue.add(path);
+                    queueOfChains.add(path);
                 }
             }
         }
